@@ -1,16 +1,42 @@
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: Arial, sans-serif;
+  background-image: url('3.jpeg'); /* Add background image */
+  background-size: cover; /* Ensures image covers the entire page */
+  background-position: center; /* Center the background image */
+  background-attachment: fixed; /* Makes the background image fixed while scrolling */
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+header {
+  display: flex;                /* Use flexbox for layout */
+  justify-content: space-between; /* Space between logo and nav */
+  align-items: center;         /* Center items vertically */
+  #background-color: #333; /* Background color for the header */
+  padding: 10px 0;
+}
+
+.logo {
+  width: 100px;             /* Adjust the logo width */
+  height: auto;             /* Maintain aspect ratio */
+  #display: block;           /* Ensure it's displayed as a block element */
 }
 
 .navbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: #333;
-  overflow: hidden;
-  display: flex; /* Flexbox ensures a horizontal layout */
-  justify-content: flex-start; /* Align items to the left */
+  display: flex;
+  justify-content: flex-end;
 }
 
 .navbar li {
@@ -21,18 +47,76 @@ body {
 .navbar li a {
   display: block;
   color: white;
+  font-size: 18px; /* Change this to your desired font size */
+  font-family: 'Futura', sans-serif;
   text-align: center;
-  padding: 14px 20px;
+  padding: 28px 28px;
   text-decoration: none;
+  #background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
 }
 
 .navbar li a:hover {
-  background-color: #575757;
+  background-color: rgba(0, 0, 0, 0.7); /* Change background on hover */
 }
 
 /* Responsive */
 @media (max-width: 600px) {
   .navbar {
-    flex-direction: column; /* Stack items vertically on small screens */
+    flex-direction: column;
+  }
+  .footer-links li {
+    display: block;
+    margin: 5px 0;
   }
 }
+
+/* Footer styling */
+footer {
+  #background-color: #26d7ff; /* Footer background */
+  color: white;
+  padding: 1px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-logo a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.footer-links li a:hover {
+  color: #ddd;
+}
+
+.footer-bottom {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
